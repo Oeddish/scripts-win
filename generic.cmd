@@ -40,7 +40,7 @@ rem
 
 doskey np        = notepad++ $1
 doskey proj      = pushd %PROJ_ROOT%
-doskey env       = call  %SCRIPT_HOME%\%SCRIPT_NAME% %SCRIPT_HOME%
+doskey aenv      = call  %SCRIPT_HOME%\%SCRIPT_NAME% %SCRIPT_HOME%
 doskey eenv      = notepad++ %SCRIPT_HOME%\%SCRIPT_NAME%
 doskey ebase     = notepad++ %SCRIPT_HOME%\baseenv.cmd
 doskey scripts   = pushd %SCRIPT_HOME%
@@ -53,12 +53,14 @@ doskey docs      = pushd %DOCUMENTS%
 doskey download  = pushd %DOWNLOADS%
 doskey appdata   = pushd %APPDATA%
 doskey user      = pushd %USERPROFILE%
+doskey backup    = xcopy %1 %2 /r /e /h /v /y /s
 
 TITLE Generic Dev Console
-@echo Environment    : %SCRIPT_HOME%\%SCRIPT_NAME%
+@ECHO Environment    : %SCRIPT_HOME%\%SCRIPT_NAME%
 @ECHO.
 @ECHO SRC            : %SRC%
 @ECHO DEV            : %DEV%
 @ECHO.
+
 pushd %PROJ_ROOT%
 
