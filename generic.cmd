@@ -35,6 +35,14 @@ SET JAVA_OPTS=-Xms4G -Xmx4G -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -server
 SET PATH=%PATH%;%JAVA_HOME%\bin
 
 rem
+rem Savescum
+rem
+
+SET SAVESCUM_HOME=D:\source\git\Savescum\bin\Release\netcoreapp3.1
+SET arkLocation="C:\Program Files (x86)\Steam\steamapps\common\ARK Survival Ascended\ShooterGame\Saved\\"
+SET PATH=%PATH%;%SAVESCUM_HOME%
+
+rem
 rem ALIASES
 rem
 
@@ -53,12 +61,16 @@ doskey docs      = pushd %DOCUMENTS%
 doskey download  = pushd %DOWNLOADS%
 doskey appdata   = pushd %APPDATA%
 doskey user      = pushd %USERPROFILE%
+doskey backup    = xcopy %1 %2 /r /e /h /v /y /s
 
 TITLE Generic Dev Console
-@echo Environment    : %SCRIPT_HOME%\%SCRIPT_NAME%
+@ECHO Environment    : %SCRIPT_HOME%\%SCRIPT_NAME%
 @ECHO.
 @ECHO SRC            : %SRC%
 @ECHO DEV            : %DEV%
 @ECHO.
+
+ECHO arkLocation=%arkLocation%
+
 pushd %PROJ_ROOT%
 

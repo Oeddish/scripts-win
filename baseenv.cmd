@@ -1,4 +1,4 @@
-SET SRC=g:\source
+SET SRC=d:\source
 SET DEV=d:\dev
 SET SCRIPT_HOME=%DEV%\scripts
 SET PATH=%PATH%;%DEV%\cygwin\bin;%SCRIPT_HOME%;%DEV%\groovy-2.1.2\bin;%DEV%\bin
@@ -13,4 +13,5 @@ rem
 
 rem puts current directory on the clipboard
 doskey cc=echo^|set /p=%%cd%%^|clip
-doskey cd        = pushd $1
+doskey cs= pushd $1
+doskey cr= popd
